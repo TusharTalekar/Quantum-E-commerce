@@ -24,32 +24,32 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
             {/* Close Button */}
             <div className="flex justify-end p-6">
                 <button onClick={toggleCartDrawer}>
-                    < IoMdClose className="h-8 w-8 text-stone-800" />
+                    < IoMdClose className="h-8 w-8 text-gray-800" />
                 </button>
             </div>
             {/* Cart content with scrollable area */}
             <div className="flex-grow p-6 overflow-y-auto">
-                <h2 className="text-3xl font-black mb-6 text-emerald-800"> Your Cart</h2>
+                <h2 className="text-3xl font-black mb-6 text-teal-700"> Your Cart</h2>
                 {cart && cart?.products?.length > 0 ? (
                     <CartContents cart={cart} userId={userId} guestId={guestId} />
                 ) : (
-                    <p className="text-center text-stone-600">Your Cart is empty.</p>
+                    <p className="text-center text-gray-600">Your Cart is empty.</p>
                 )}
             </div>
             {/* Checkout button fixed at the bottom */}
-            <div className="p-6 bg-white sticky bottom-0 border-t-2 border-stone-200">
+            <div className="p-6 bg-white sticky bottom-0 border-t-2 border-gray-200">
                 {cart && cart?.products?.length > 0 && (
                     <>
-                        <div className="flex justify-between items-center text-xl font-bold mb-4 text-stone-800">
+                        <div className="flex justify-between items-center text-xl font-bold mb-4 text-gray-800">
                             <p>Subtotal</p>
                             <p>${cart.totalPrice?.toLocaleString()}</p>
                         </div>
                         <button
                             onClick={handleCheckout}
-                            className="w-full bg-emerald-800 text-white py-4 rounded-full font-bold hover:bg-emerald-700 transition">
+                            className="w-full bg-teal-700 text-white py-4 rounded-full font-bold hover:bg-teal-600 transition">
                             Checkout
                         </button>
-                        <p className="text-sm tracking-wide text-stone-600 mt-4 text-center">
+                        <p className="text-sm tracking-wide text-gray-600 mt-4 text-center">
                             Shipping, taxes, and discount codes calculated at checkout.
                         </p>
                     </>

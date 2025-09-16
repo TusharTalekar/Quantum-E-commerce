@@ -11,10 +11,10 @@ const SortOptions = () => {
 
   return (
     <div className='mb-6 flex items-center justify-end font-serif'>
-      <label htmlFor="sort" className="mr-3 font-semibold text-stone-800">Sort by:</label>
+      <label htmlFor="sort" className="mr-3 font-semibold text-gray-800">Sort by:</label>
       <select
         id="sort"
-        className='border border-stone-400 p-2 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-shadow'
+        className='border border-gray-400 p-2 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-teal-500 transition-shadow'
         onChange={handleSortChange}
         value={searchParams.get("sortBy") || ""}
       >

@@ -17,7 +17,7 @@ const AdminSidebar = () => {
     return (
         <div className='p-6'>
             <div className="mb-8 text-center">
-                <Link to={`/admin`} className='text-3xl font-black text-amber-50'>
+                <Link to={`/admin`} className='text-3xl font-black text-white'>
                     Quantum
                 </Link>
             </div>
@@ -26,19 +26,19 @@ const AdminSidebar = () => {
             <nav className='flex flex-col space-y-3'>
                 <NavLink
                     to={`/admin/users`}
-                    className={({ isActive }) => isActive ? "bg-emerald-700 text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors" : "text-amber-100 hover:bg-emerald-700 hover:text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
+                    className={({ isActive }) => isActive ? "bg-teal-700 text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors" : "text-gray-100 hover:bg-teal-700 hover:text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
                     <FaUser />
                     <span className="font-semibold">Users</span>
                 </NavLink>
                 <NavLink
                     to={`/admin/products`}
-                    className={({ isActive }) => isActive ? "bg-emerald-700 text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors" : "text-amber-100 hover:bg-emerald-700 hover:text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
+                    className={({ isActive }) => isActive ? "bg-teal-700 text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors" : "text-gray-100 hover:bg-teal-700 hover:text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
                     <FaBoxOpen />
                     <span className="font-semibold">Products</span>
                 </NavLink>
                 <NavLink
                     to={`/admin/orders`}
-                    className={({ isActive }) => isActive ? "bg-emerald-700 text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors" : "text-amber-100 hover:bg-emerald-700 hover:text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
+                    className={({ isActive }) => isActive ? "bg-teal-700 text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors" : "text-gray-100 hover:bg-teal-700 hover:text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
                     <FaClipboardList />
                     <span className="font-semibold">Orders</span>
                 </NavLink>
@@ -47,8 +47,8 @@ const AdminSidebar = () => {
                     to={`/`}
                     className={({ isActive }) =>
                         isActive
-                            ? "bg-emerald-700 text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"
-                            : "text-amber-100 hover:bg-emerald-700 hover:text-amber-50 py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
+                            ? "bg-teal-700 text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"
+                            : "text-gray-100 hover:bg-teal-700 hover:text-white py-3 px-4 rounded-lg flex items-center space-x-3 transition-colors"} >
                     <FaStore />
                     <span className="font-semibold">Shop</span>
                 </NavLink>
@@ -57,7 +57,7 @@ const AdminSidebar = () => {
             <div className='mt-8'>
                 <button
                     onClick={handleLogout}
-                    className='w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center space-x-2 transition-colors'>
+                    className='w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-4 rounded-lg flex items-center justify-center space-x-2 transition-colors'>
                     <FaSignOutAlt />
                     <span>Logout</span>
                 </button>

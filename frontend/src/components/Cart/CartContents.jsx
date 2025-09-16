@@ -30,36 +30,36 @@ const CartContents = ({ cart, userId, guestId }) => {
                 cart.products.map((product, index) => (
                     <div
                         key={index}
-                        className="flex items-start justify-between py-6 border-b-2 border-stone-200">
+                        className="flex items-start justify-between py-6 border-b-2 border-gray-200">
                         <div className="flex items-start">
                             <img
                                 src={product.image}
                                 alt={product.name}
                                 className="w-24 h-28 object-cover mr-6 rounded-lg" />
                             <div>
-                                <h3 className="text-lg font-semibold text-stone-800">{product.name}</h3>
-                                <p className="text-sm text-stone-600">
+                                <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+                                <p className="text-sm text-gray-600">
                                     size: {product.size} | color:{product.color}
                                 </p>
                                 <div className="flex items-center mt-4">
                                     <button
                                         onClick={() => handleAddToCart(product.productId, -1, product.quantity, product.size, product.color)}
-                                        className="border-2 border-stone-300 rounded-full w-8 h-8 flex items-center justify-center text-lg text-stone-800 hover:bg-stone-200 transition">
+                                        className="border-2 border-gray-300 rounded-full w-8 h-8 flex items-center justify-center text-lg text-gray-800 hover:bg-gray-300 transition">
                                         -
                                     </button>
-                                    <span className="mx-4 text-lg font-bold text-stone-800">{product.quantity}</span>
+                                    <span className="mx-4 text-lg font-bold text-gray-800">{product.quantity}</span>
                                     <button
                                         onClick={() => handleAddToCart(product.productId, 1, product.quantity, product.size, product.color)}
-                                        className="border-2 border-stone-300 rounded-full w-8 h-8 flex items-center justify-center text-lg text-stone-800 hover:bg-stone-200 transition">
+                                        className="border-2 border-gray-300 rounded-full w-8 h-8 flex items-center justify-center text-lg text-gray-800 hover:bg-gray-300 transition">
                                         +
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div className="text-right">
-                            <p className="text-lg font-bold text-stone-800">${product.price.toLocaleString()}</p>
+                            <p className="text-lg font-bold text-gray-800">${product.price.toLocaleString()}</p>
                             <button onClick={() => handleRemoveFromCart(product.productId, product.size, product.color)}>
-                                <RiDeleteBin3Line className="h-6 w-6 mt-4 text-red-500 hover:text-red-700 transition-colors" />
+                                <RiDeleteBin3Line className="h-6 w-6 mt-4 text-rose-500 hover:text-rose-700 transition-colors" />
                             </button>
                         </div>
                     </div>

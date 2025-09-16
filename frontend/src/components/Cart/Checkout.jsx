@@ -78,37 +78,37 @@ const Checkout = () => {
     }
 
     if (loading) {
-        return <p className="text-center py-10 text-stone-600">Loading Cart ...</p>
+        return <p className="text-center py-10 text-gray-600">Loading Cart ...</p>
     }
     if (error) {
-        return <p className="text-center py-10 text-red-500">Error: {error}</p>
+        return <p className="text-center py-10 text-rose-500">Error: {error}</p>
     }
     if (!cart || !cart.products || cart.products.length === 0) {
-        return <p className="text-center py-10 text-stone-600">Your Cart is empty.</p>
+        return <p className="text-center py-10 text-gray-600">Your Cart is empty.</p>
     }
 
 
     return (
-        <div className="bg-amber-50 min-h-screen font-serif text-stone-800">
+        <div className="bg-gray-50 min-h-screen font-serif text-gray-900">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto py-12 px-6">
                 {/* Left section */}
                 <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h2 className="text-3xl font-black uppercase mb-8 text-emerald-800">Checkout</h2>
+                    <h2 className="text-3xl font-black uppercase mb-8 text-teal-700">Checkout</h2>
                     <form onSubmit={handleCreateCheckout}>
                         <h3 className="text-xl font-bold mb-4">Contact Details</h3>
                         <div className="mb-4">
-                            <label className="block text-stone-700 font-medium mb-2">Email</label>
+                            <label className="block text-gray-700 font-medium mb-2">Email</label>
                             <input
                                 type="email"
                                 value={user ? user.email : ""}
-                                className="w-full p-3 border-2 border-stone-300 rounded-lg bg-stone-100 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500"
                                 disabled
                             />
                         </div>
                         <h3 className="mb-4 text-xl font-bold">Delivery</h3>
                         <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-stone-700 font-medium mb-2">First Name</label>
+                                <label className="block text-gray-700 font-medium mb-2">First Name</label>
                                 <input
                                     type="text"
                                     value={shippingAddress.firstName}
@@ -118,12 +118,12 @@ const Checkout = () => {
                                             firstName: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                     required />
                             </div>
 
                             <div>
-                                <label className="block text-stone-700 font-medium mb-2">Last Name</label>
+                                <label className="block text-gray-700 font-medium mb-2">Last Name</label>
                                 <input
                                     type="text"
                                     value={shippingAddress.lastName}
@@ -133,14 +133,14 @@ const Checkout = () => {
                                             lastName: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                     required />
                             </div>
                         </div>
 
 
                         <div className="mb-4">
-                            <label className="block text-stone-700 font-medium mb-2">Address</label>
+                            <label className="block text-gray-700 font-medium mb-2">Address</label>
                             <input
                                 type="text"
                                 value={shippingAddress.address}
@@ -150,14 +150,14 @@ const Checkout = () => {
                                         address: e.target.value,
                                     })
                                 }
-                                className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                 required />
                         </div>
 
 
                         <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label className="block text-stone-700 font-medium mb-2">City</label>
+                                <label className="block text-gray-700 font-medium mb-2">City</label>
                                 <input
                                     type="text"
                                     value={shippingAddress.city}
@@ -167,12 +167,12 @@ const Checkout = () => {
                                             city: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                     required />
                             </div>
 
                             <div>
-                                <label className="block text-stone-700 font-medium mb-2">Postal Code</label>
+                                <label className="block text-gray-700 font-medium mb-2">Postal Code</label>
                                 <input
                                     type="text"
                                     value={shippingAddress.postalCode}
@@ -182,14 +182,14 @@ const Checkout = () => {
                                             postalCode: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                     required />
                             </div>
                         </div>
 
 
                         <div className="mb-4">
-                            <label className="block text-stone-700 font-medium mb-2">Country</label>
+                            <label className="block text-gray-700 font-medium mb-2">Country</label>
                             <input
                                 type="text"
                                 value={shippingAddress.country}
@@ -199,13 +199,13 @@ const Checkout = () => {
                                         country: e.target.value,
                                     })
                                 }
-                                className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                 required />
                         </div>
 
 
                         <div className="mb-6">
-                            <label className="block text-stone-700 font-medium mb-2">Phone</label>
+                            <label className="block text-gray-700 font-medium mb-2">Phone</label>
                             <input
                                 type="text"
                                 value={shippingAddress.phone}
@@ -215,14 +215,14 @@ const Checkout = () => {
                                         phone: e.target.value,
                                     })
                                 }
-                                className="w-full p-3 border-2 border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
                                 required />
                         </div>
 
 
                         <div>
                             {!checkoutId ? (
-                                <button type="submit" className="w-full py-4 rounded-full bg-emerald-800 text-white font-bold hover:bg-emerald-700 transition">
+                                <button type="submit" className="w-full py-4 rounded-full bg-teal-700 text-white font-bold hover:bg-teal-600 transition">
                                     Continue to Payment
                                 </button>
                             ) : (
@@ -240,35 +240,35 @@ const Checkout = () => {
                 </div>
                 {/* Right section  */}
                 <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h3 className="text-3xl font-bold mb-6 text-emerald-800">Order Summary</h3>
-                    <div className="border-t-2 border-stone-200 mb-6 pt-6" >
+                    <h3 className="text-3xl font-bold mb-6 text-teal-700">Order Summary</h3>
+                    <div className="border-t-2 border-gray-200 mb-6 pt-6" >
                         {
                             cart.products.map((product, index) => (
                                 <div
                                     key={index}
-                                    className="flex items-start justify-between py-4 border-b border-stone-200">
+                                    className="flex items-start justify-between py-4 border-b border-gray-200">
                                     <div className="flex items-start">
                                         <img src={product.image} alt={product.name}
                                             className="w-24 h-28 object-cover mr-6 rounded-lg" />
                                         <div>
-                                            <h3 className="text-lg font-semibold text-stone-800">{product.name}</h3>
-                                            <p className="text-sm text-stone-600">Size: {product.size}</p>
-                                            <p className="text-sm text-stone-600">Color: {product.color}</p>
-                                            <p className="text-lg font-bold text-stone-800 mt-2">${product.price?.toLocaleString()}</p>
+                                            <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
+                                            <p className="text-sm text-gray-600">Size: {product.size}</p>
+                                            <p className="text-sm text-gray-600">Color: {product.color}</p>
+                                            <p className="text-lg font-bold text-gray-800 mt-2">${product.price?.toLocaleString()}</p>
                                         </div>
                                     </div>
                                 </div>
                             ))}
                     </div>
-                    <div className="flex justify-between items-center text-lg mb-4 text-stone-700">
+                    <div className="flex justify-between items-center text-lg mb-4 text-gray-700">
                         <p>Subtotal</p>
                         <p>${cart.totalPrice?.toLocaleString()}</p>
                     </div>
-                    <div className="flex justify-between items-center text-lg text-stone-700">
+                    <div className="flex justify-between items-center text-lg text-gray-700">
                         <p>Shipping</p>
                         <p>Free</p>
                     </div>
-                    <div className="flex justify-between items-center text-2xl font-bold mt-6 border-t-2 border-stone-200 pt-4 text-stone-800">
+                    <div className="flex justify-between items-center text-2xl font-bold mt-6 border-t-2 border-gray-200 pt-4 text-gray-800">
                         <p>Total</p>
                         <p>${cart.totalPrice?.toLocaleString()}</p>
                     </div>

@@ -71,16 +71,16 @@ const ProductDetails = ({ productId }) => {
     };
 
     if (loading) {
-        return <p className="text-center text-lg py-10 text-stone-600">Loading...</p>
+        return <p className="text-center text-lg py-10 text-gray-600">Loading...</p>
     }
     if (error) {
-        return <p className="text-center text-lg py-10 text-red-500">Error: {error}</p>
+        return <p className="text-center text-lg py-10 text-rose-500">Error: {error}</p>
     }
 
 
 
     return (
-        <div className="py-16 px-4 bg-amber-50">
+        <div className="py-16 px-4 bg-gray-50">
             {selectedProduct && (
                 <div className="max-w-6xl mx-auto bg-white p-10 rounded-xl shadow-lg">
                     <div className="flex flex-col lg:flex-row gap-16">
@@ -94,7 +94,7 @@ const ProductDetails = ({ productId }) => {
                                         src={image.url}
                                         alt={image.altText || `Thumbnail ${index}`}
                                         className={`w-24 h-24 rounded-lg object-cover cursor-pointer border-2 transition-all 
-                                            ${mainImage === image.url ? "border-emerald-800 shadow-md" : "border-stone-300 hover:border-stone-400"}`}
+                                            ${mainImage === image.url ? "border-teal-700 shadow-md" : "border-gray-300 hover:border-gray-400"}`}
                                         onClick={() => setMainImage(image.url)}
                                     />
                                 ))}
@@ -118,7 +118,7 @@ const ProductDetails = ({ productId }) => {
                             <p className='text-xl text-gray-800 font-bold mb-6'>
                                 {selectedProduct.price && `$${selectedProduct.price}`}
                             </p>
-                            <p className="text-stone-600 mb-8 leading-relaxed">
+                            <p className="text-gray-600 mb-8 leading-relaxed">
                                 {selectedProduct.description}
                             </p>
                             <div className='mb-8'>
@@ -130,8 +130,8 @@ const ProductDetails = ({ productId }) => {
                                             onClick={() => setSelectedColor(color)}
                                             className={`w-12 h-12 rounded-full border-4 transition-all
                                             ${selectedColor === color
-                                                    ? "border-emerald-800 ring-4 ring-offset-2 ring-emerald-300"
-                                                    : "border-stone-300 hover:border-stone-400"
+                                                    ? "border-teal-700 ring-4 ring-offset-2 ring-teal-300"
+                                                    : "border-gray-300 hover:border-gray-400"
                                                 }`}
                                             style={{
                                                 backgroundColor: color.toLocaleLowerCase(),
@@ -153,8 +153,8 @@ const ProductDetails = ({ productId }) => {
                                             onClick={() => setSelectedSize(size)}
                                             className={`px-6 py-3 rounded-full border-2 transition-all font-semibold
                                                 ${selectedSize === size
-                                                    ? "bg-emerald-800 text-white border-emerald-800 shadow-md"
-                                                    : "bg-white text-gray-800 border-stone-300 hover:bg-stone-100"
+                                                    ? "bg-teal-700 text-white border-teal-700 shadow-md"
+                                                    : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
                                                 }`}
                                         >
                                             {size}
@@ -168,13 +168,13 @@ const ProductDetails = ({ productId }) => {
                                 <div className='flex items-center space-x-6 mt-2'>
                                     <button
                                         onClick={() => handleQuantityChange('minus')}
-                                        className='px-4 py-2 bg-stone-200 rounded-full text-2xl hover:bg-stone-300 transition-colors'>
+                                        className='px-4 py-2 bg-gray-200 rounded-full text-2xl hover:bg-gray-300 transition-colors'>
                                         -
                                     </button>
                                     <span className='text-3xl font-bold'>{quantity}</span>
                                     <button
                                         onClick={() => handleQuantityChange('plus')}
-                                        className='px-4 py-2 bg-stone-200 rounded-full text-2xl hover:bg-stone-300 transition-colors'>
+                                        className='px-4 py-2 bg-gray-200 rounded-full text-2xl hover:bg-gray-300 transition-colors'>
                                         +
                                     </button>
                                 </div>
@@ -183,20 +183,20 @@ const ProductDetails = ({ productId }) => {
                             <button
                                 onClick={handleAddToCart}
                                 disabled={isButtonDisabled}
-                                className={`bg-emerald-800 text-white font-bold tracking-wide rounded-full w-full px-8 py-4 text-xl transition-colors mb-4
+                                className={`bg-teal-700 text-white font-bold tracking-wide rounded-full w-full px-8 py-4 text-xl transition-colors mb-4
                                     ${isButtonDisabled
                                         ? "cursor-not-allowed opacity-50"
-                                        : "hover:bg-emerald-700"
+                                        : "hover:bg-teal-600"
                                     }`}
                             >
                                 {isButtonDisabled ? "ADDING..." : "ADD TO CART"}
                             </button>
 
-                            <div className='mt-12 text-stone-700'>
+                            <div className='mt-12 text-gray-700'>
                                 <h3 className='text-3xl font-bold mb-4'>Characteristics</h3>
-                                <table className='w-full text-left text-base text-stone-600 border-collapse'>
+                                <table className='w-full text-left text-base text-gray-600 border-collapse'>
                                     <tbody>
-                                        <tr className='border-b border-stone-300'>
+                                        <tr className='border-b border-gray-300'>
                                             <td className='py-3 pr-6 font-bold text-gray-800'>Brand</td>
                                             <td className='py-3'>{selectedProduct.brand}</td>
                                         </tr>

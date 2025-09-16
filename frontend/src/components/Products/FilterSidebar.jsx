@@ -108,10 +108,10 @@ const FilterSidebar = () => {
 
     return (
         <div className="p-8 font-serif">
-            <h3 className="text-xl font-bold text-stone-800 mb-6">Filter</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-6">Filter</h3>
             {/* Category Filter */}
             <div className="mb-6">
-                <label className="block text-stone-800 font-bold mb-2">Category</label>
+                <label className="block text-gray-900 font-bold mb-2">Category</label>
                 {categories.map((category) => (
                     <div key={category} className="flex items-center mb-2">
                         <input
@@ -120,15 +120,15 @@ const FilterSidebar = () => {
                             value={category}
                             onChange={handleFilterChange}
                             checked={filters.category === category}
-                            className="mr-3 h-5 w-5 text-emerald-800 focus:ring-emerald-500 border-stone-300" />
-                        <span className="text-stone-700">{category}</span>
+                            className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300" />
+                        <span className="text-gray-700">{category}</span>
                     </div>
                 ))}
             </div>
 
             {/* Gender Filter */}
             <div className="mb-6">
-                <label className="block text-stone-800 font-bold mb-2">Gender</label>
+                <label className="block text-gray-900 font-bold mb-2">Gender</label>
                 {genders.map((gender) => (
                     <div key={gender} className="flex items-center mb-2">
                         <input
@@ -137,15 +137,15 @@ const FilterSidebar = () => {
                             value={gender}
                             onChange={handleFilterChange}
                             checked={filters.gender === gender}
-                            className="mr-3 h-5 w-5 text-emerald-800 focus:ring-emerald-500 border-stone-300" />
-                        <span className="text-stone-700">{gender}</span>
+                            className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300" />
+                        <span className="text-gray-700">{gender}</span>
                     </div>
                 ))}
             </div>
 
             {/* Color Filter */}
             <div className="mb-6">
-                <label className="block text-stone-800 font-bold mb-2">Color</label>
+                <label className="block text-gray-900 font-bold mb-2">Color</label>
                 <div className="flex flex-wrap gap-2">
                     {colors.map((color) => (
                         <button
@@ -153,8 +153,8 @@ const FilterSidebar = () => {
                             name="color"
                             value={color}
                             onClick={handleFilterChange}
-                            className={`w-10 h-10 rounded-full border-2 border-stone-300 cursor-pointer transform hover:scale-105 
-                                ${filters.color === color ? "ring-2 ring-emerald-500 ring-offset-2" : ""}`}
+                            className={`w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer transform hover:scale-105 
+                                ${filters.color === color ? "ring-2 ring-teal-500 ring-offset-2" : ""}`}
                             style={{ backgroundColor: color.toLowerCase() }}>
                         </button>
                     ))}
@@ -163,7 +163,7 @@ const FilterSidebar = () => {
 
             {/* Size Filter */}
             <div className="mb-6">
-                <label className="block text-stone-800 font-bold mb-2">Size</label>
+                <label className="block text-gray-900 font-bold mb-2">Size</label>
                 <div className="flex flex-wrap gap-2">
                     {sizes.map((size) => (
                         <div
@@ -175,8 +175,8 @@ const FilterSidebar = () => {
                                 value={size}
                                 onChange={handleFilterChange}
                                 checked={filters.size.includes(size)}
-                                className="mr-3 h-5 w-5 text-emerald-800 focus:ring-emerald-500 border-stone-300 rounded" />
-                            <span className="text-stone-700">{size}</span>
+                                className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300 rounded" />
+                            <span className="text-gray-700">{size}</span>
                         </div>
                     ))}
                 </div>
@@ -184,7 +184,7 @@ const FilterSidebar = () => {
 
             {/* Material Filter */}
             <div className="mb-6">
-                <label className="block text-stone-800 font-bold mb-2">Material</label>
+                <label className="block text-gray-900 font-bold mb-2">Material</label>
                 <div className="flex flex-wrap gap-2">
                     {materials.map((material) => (
                         <div
@@ -196,8 +196,8 @@ const FilterSidebar = () => {
                                 value={material}
                                 onChange={handleFilterChange}
                                 checked={filters.material.includes(material)}
-                                className="mr-3 h-5 w-5 text-emerald-800 focus:ring-emerald-500 border-stone-300 rounded" />
-                            <span className="text-stone-700">{material}</span>
+                                className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300 rounded" />
+                            <span className="text-gray-700">{material}</span>
                         </div>
                     ))}
                 </div>
@@ -205,7 +205,7 @@ const FilterSidebar = () => {
 
             {/* Brand Filter */}
             <div className="mb-6">
-                <label className="block text-stone-800 font-bold mb-2">Brand</label>
+                <label className="block text-gray-900 font-bold mb-2">Brand</label>
                 <div className="flex flex-wrap gap-2">
                     {brands.map((brand) => (
                         <div
@@ -217,8 +217,8 @@ const FilterSidebar = () => {
                                 value={brand}
                                 onChange={handleFilterChange}
                                 checked={filters.brand.includes(brand)}
-                                className="mr-3 h-5 w-5 text-emerald-800 focus:ring-emerald-500 border-stone-300 rounded" />
-                            <span className="text-stone-700">{brand}</span>
+                                className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300 rounded" />
+                            <span className="text-gray-700">{brand}</span>
                         </div>
                     ))}
                 </div>
@@ -226,7 +226,7 @@ const FilterSidebar = () => {
 
             {/* Price range */}
             <div className="mb-8">
-                <label className="block text-stone-800 mb-2 font-bold">
+                <label className="block text-gray-900 mb-2 font-bold">
                     Price Range
                 </label>
                 <input
@@ -236,9 +236,9 @@ const FilterSidebar = () => {
                     max={100}
                     value={priceRange[1]}
                     onChange={handlePriceChange}
-                    className="w-full h-2 bg-stone-300 rounded-lg appearance-none cursor-pointer accent-emerald-500"
+                    className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-teal-500"
                 />
-                <div className="flex justify-between text-stone-600 mt-2">
+                <div className="flex justify-between text-gray-600 mt-2">
                     <span>$0</span>
                     <span>${priceRange[1]}</span>
                 </div>

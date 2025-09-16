@@ -11,9 +11,9 @@ const AdminLayout = () => {
     }
 
     return (
-        <div className='min-h-screen flex flex-col md:flex-row relative bg-amber-50 font-serif'>
+        <div className='min-h-screen flex flex-col md:flex-row relative bg-gray-50 font-serif'>
             {/* Mobile toggle button  */}
-            <div className='flex md:hidden p-4 bg-stone-800 text-amber-50 z-20'>
+            <div className='flex md:hidden p-4 bg-slate-900 text-white z-20'>
                 <button onClick={toggleSidebar}>
                     <FaBars size={24} />
                 </button>
@@ -30,7 +30,7 @@ const AdminLayout = () => {
             )}
 
             {/* sidebar  */}
-            <div className={`bg-stone-800 w-64 min-h-screen text-amber-50 absolute md:relative transform 
+            <div className={`bg-slate-900 w-64 min-h-screen text-white absolute md:relative transform 
                 ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
                 transition-transform duration-300 md:translate-x-0 md:static md:block z-20`}>
                 <AdminSidebar />

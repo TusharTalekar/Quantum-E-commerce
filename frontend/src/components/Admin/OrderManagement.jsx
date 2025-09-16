@@ -23,14 +23,14 @@ const OrderManagement = () => {
     };
 
     if (loading) return <p className="text-center">Loading ...</p>
-    if (error) return <p className="text-center text-red-500">Error: {error}</p>
+    if (error) return <p className="text-center text-rose-500">Error: {error}</p>
 
     return (
         <div className='max-w-7xl mx-auto p-6'>
-            <h2 className="text-3xl font-bold mb-6 text-stone-800">Order Management</h2>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Order Management</h2>
             <div className="overflow-x-auto shadow-xl rounded-xl">
-                <table className="min-w-full text-left bg-white text-stone-600">
-                    <thead className="text-sm bg-emerald-100 text-emerald-800 font-semibold uppercase">
+                <table className="min-w-full text-left bg-white text-gray-600">
+                    <thead className="text-sm bg-teal-100 text-teal-800 font-semibold uppercase">
                         <tr>
                             <th className="py-3 px-4">Order ID</th>
                             <th className="py-3 px-4">Customer</th>
@@ -44,19 +44,19 @@ const OrderManagement = () => {
                             orders.map((order) => (
                                 <tr
                                     key={order._id}
-                                    className="border-b border-stone-200 hover:bg-emerald-50 transition-colors">
-                                    <td className="py-4 px-4 font-bold text-stone-900 whitespace-nowrap">
+                                    className="border-b border-gray-200 hover:bg-teal-50 transition-colors">
+                                    <td className="py-4 px-4 font-bold text-gray-900 whitespace-nowrap">
                                         #{order._id}
                                     </td>
-                                    <td className="p-4 font-medium text-stone-800">{order.user.name}</td>
-                                    <td className="p-4 font-bold text-stone-800">${order.totalPrice.toFixed(2)}</td>
+                                    <td className="p-4 font-medium text-gray-800">{order.user.name}</td>
+                                    <td className="p-4 font-bold text-gray-800">${order.totalPrice.toFixed(2)}</td>
                                     <td className="p-4">
                                         <select
                                             value={order.status}
                                             onChange={(e) =>
                                                 handleStatusChange(order._id, e.target.value)
                                             }
-                                            className='bg-stone-100 border border-stone-300 text-stone-900 text-sm rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 block p-2.5 transition-colors'>
+                                            className='bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 block p-2.5 transition-colors'>
                                             <option value="Processing">Processing</option>
                                             <option value="Shipped">Shipped</option>
                                             <option value="Delivered">Delivered</option>
@@ -66,7 +66,7 @@ const OrderManagement = () => {
                                     <td className="p-4">
                                         <button
                                             onClick={() => handleStatusChange(order._id, "Delivered")}
-                                            className="bg-emerald-600 text-white px-4 py-2 font-semibold rounded-lg hover:bg-emerald-700 transition-colors">
+                                            className="bg-teal-600 text-white px-4 py-2 font-semibold rounded-lg hover:bg-teal-700 transition-colors">
                                             Mark as Delivered
                                         </button>
                                     </td>
@@ -74,7 +74,7 @@ const OrderManagement = () => {
                             ))
                         ) : (
                             <tr>
-                                <td colSpan={5} className="p-4 text-center text-stone-600">
+                                <td colSpan={5} className="p-4 text-center text-gray-600">
                                     No order found.
                                 </td>
                             </tr>

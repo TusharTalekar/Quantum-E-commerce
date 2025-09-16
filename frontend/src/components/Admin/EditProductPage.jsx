@@ -76,76 +76,76 @@ const EditProductPage = () => {
     }
 
     if (loading) return <p className="text-center">Loading ...</p>
-    if (error) return <p className="text-red-500 text-center">Error: {error}</p>
+    if (error) return <p className="text-rose-500 text-center">Error: {error}</p>
 
 
     return (
         <div className="max-w-5xl mx-auto p-8 shadow-xl rounded-xl bg-white">
-            <h2 className="text-3xl font-bold mb-6 text-stone-800">Edit Product</h2>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Edit Product</h2>
             <form onSubmit={handleSubmit}>
                 {/* Name  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Product Name</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Product Name</label>
                     <input
                         type="text"
                         name="name"
                         value={productData.name}
                         onChange={handleChange}
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         required />
                 </div>
 
                 {/* Description  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Description</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Description</label>
                     <textarea
                         name="description"
                         value={productData.description}
                         onChange={handleChange}
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         rows={4}
                         required />
                 </div>
 
                 {/* Price  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Price</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Price</label>
                     <input
                         type="number"
                         name="price"
                         value={productData.price}
                         onChange={handleChange}
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         required />
                 </div>
 
                 {/* Count in stock  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Count in Stock</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Count in Stock</label>
                     <input
                         type="number"
                         name="countInStock"
                         value={productData.countInStock}
                         onChange={handleChange}
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         required />
                 </div>
 
                 {/* sku  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">SKU</label>
+                    <label className="block font-semibold mb-2 text-slate-900">SKU</label>
                     <input
                         type="text"
                         name="sku"
                         value={productData.sku}
                         onChange={handleChange}
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         required />
                 </div>
 
                 {/* Sizes  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Sizes (comma-separated)</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Sizes (comma-separated)</label>
                     <input
                         type="text"
                         name="sizes"
@@ -156,13 +156,13 @@ const EditProductPage = () => {
                                 sizes: e.target.value.split(",").map((size) => size.trim()),
                             })
                         }
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         required />
                 </div>
 
                 {/* Colors  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Colors (comma-separated)</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Colors (comma-separated)</label>
                     <input
                         type="text"
                         name="colors"
@@ -173,16 +173,16 @@ const EditProductPage = () => {
                                 colors: e.target.value.split(",").map((color) => color.trim()),
                             })
                         }
-                        className="w-full border-2 border-stone-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                        className="w-full border-2 border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-teal-500"
                         required />
                 </div>
 
 
                 {/* Image Upload  */}
                 <div className="mb-6">
-                    <label className="block font-semibold mb-2 text-stone-800">Upload Image</label>
+                    <label className="block font-semibold mb-2 text-slate-900">Upload Image</label>
                     <input type="file" onChange={handleImageUpload}
-                        className="bg-emerald-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 transition-colors" />
+                        className="bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 transition-colors" />
                     {uploading && <p>Uploading Image...</p>}
                     <div className="flex gap-4 mt-4">
                         {productData.images.map((image, index) => (
@@ -196,7 +196,7 @@ const EditProductPage = () => {
 
                 <button
                     type="submit"
-                    className="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition-colors">
+                    className="w-full bg-teal-600 text-white font-bold py-3 rounded-lg hover:bg-teal-700 transition-colors">
                     Update Product
                 </button>
 
