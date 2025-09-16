@@ -62,12 +62,12 @@ const UserManagement = () => {
 
     return (
         <div className='max-w-7xl mx-auto p-6'>
-            <h2 className="text-3xl font-bold mb-8 text-slate-900">User Management</h2>
+            <h2 className="text-3xl font-bold mb-8 text-gray-900">User Management</h2>
             {loading && <p>Loading ...</p>}
-            {error && <p className="text-rose-500">Error: {error}</p>}
+            {error && <p className="text-red-500">Error: {error}</p>}
             {/* Add new user form  */}
             <div className="p-8 rounded-xl shadow-xl bg-white mb-8">
-                <h3 className="text-xl font-bold mb-4 text-slate-900">Add New User</h3>
+                <h3 className="text-xl font-bold mb-4 text-gray-900">Add New User</h3>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-4">
                         <label className="block text-gray-700 font-medium mb-2">Name</label>
@@ -76,7 +76,7 @@ const UserManagement = () => {
                             name='name'
                             value={formData.name}
                             onChange={handleChange}
-                            className='w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500'
+                            className='w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500'
                             required />
                     </div>
                     <div className="mb-4">
@@ -86,7 +86,7 @@ const UserManagement = () => {
                             name='email'
                             value={formData.email}
                             onChange={handleChange}
-                            className='w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500'
+                            className='w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500'
                             required />
                     </div>
                     <div className="mb-4">
@@ -96,7 +96,7 @@ const UserManagement = () => {
                             name='password'
                             value={formData.password}
                             onChange={handleChange}
-                            className='w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500'
+                            className='w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500'
                             required />
                     </div>
                     <div className="mb-6">
@@ -105,21 +105,21 @@ const UserManagement = () => {
                             name="role"
                             value={formData.role}
                             onChange={handleChange}
-                            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500">
                             <option value="customer">Customer</option>
                             <option value="admin">Admin</option>
                         </select>
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-teal-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-teal-700 transition-colors">
+                        className="w-full bg-yellow-500 text-black font-bold py-3 px-4 rounded-lg hover:bg-yellow-600 transition-colors">
                         Add User
                     </button>
                 </form>
             </div>
             <div className="overflow-x-auto shadow-xl rounded-xl">
-                <table className="min-w-full text-left bg-white text-gray-600">
-                    <thead className="bg-teal-100 text-sm uppercase text-teal-800 font-semibold">
+                <table className="min-w-full text-left bg-white text-gray-700">
+                    <thead className="bg-gray-100 text-sm uppercase text-gray-900 font-semibold">
                         <tr>
                             <th className="py-3 px-4">Name</th>
                             <th className="py-3 px-4">Email</th>
@@ -129,16 +129,16 @@ const UserManagement = () => {
                     </thead>
                     <tbody>
                         {users.map((user) => (
-                            <tr key={user._id} className="border-b border-gray-200 hover:bg-teal-50 transition-colors">
+                            <tr key={user._id} className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                                 <td className="p-4 font-bold text-gray-900 whitespace-nowrap">
                                     {user.name}
                                 </td>
-                                <td className="p-4 font-medium text-gray-800">{user.email}</td>
+                                <td className="p-4 font-medium text-gray-900">{user.email}</td>
                                 <td className="p-4 font-medium text-gray-900 whitespace-nowrap">
                                     <select
                                         value={user.role}
                                         onChange={(e) => handleRoleChange(user._id, e.target.value)}
-                                        className="p-2 border border-gray-300 rounded-lg bg-gray-100 focus:ring-2 focus:ring-teal-500">
+                                        className="p-2 border border-gray-300 rounded-lg bg-gray-100 focus:ring-2 focus:ring-yellow-500">
                                         <option value="customer">Customer</option>
                                         <option value="admin">Admin</option>
                                     </select>
@@ -146,7 +146,7 @@ const UserManagement = () => {
                                 <td className="p-4">
                                     <button
                                         onClick={() => handleDeleteUser(user._id)}
-                                        className="bg-rose-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-rose-700 transition-colors">
+                                        className="bg-red-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                                         Delete
                                     </button>
                                 </td>

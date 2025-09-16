@@ -71,16 +71,16 @@ const ProductDetails = ({ productId }) => {
     };
 
     if (loading) {
-        return <p className="text-center text-lg py-10 text-gray-600">Loading...</p>
+        return <p className="text-center text-lg py-10 text-gray-700">Loading...</p>
     }
     if (error) {
-        return <p className="text-center text-lg py-10 text-rose-500">Error: {error}</p>
+        return <p className="text-center text-lg py-10 text-red-500">Error: {error}</p>
     }
 
 
 
     return (
-        <div className="py-16 px-4 bg-gray-50">
+        <div className="py-16 px-4 bg-gray-100">
             {selectedProduct && (
                 <div className="max-w-6xl mx-auto bg-white p-10 rounded-xl shadow-lg">
                     <div className="flex flex-col lg:flex-row gap-16">
@@ -94,7 +94,7 @@ const ProductDetails = ({ productId }) => {
                                         src={image.url}
                                         alt={image.altText || `Thumbnail ${index}`}
                                         className={`w-24 h-24 rounded-lg object-cover cursor-pointer border-2 transition-all 
-                                            ${mainImage === image.url ? "border-teal-700 shadow-md" : "border-gray-300 hover:border-gray-400"}`}
+                                            ${mainImage === image.url ? "border-orange-500 shadow-md" : "border-gray-300 hover:border-gray-400"}`}
                                         onClick={() => setMainImage(image.url)}
                                     />
                                 ))}
@@ -109,20 +109,20 @@ const ProductDetails = ({ productId }) => {
                         </div>
                         {/* Right side */}
                         <div className='lg:w-1/2'>
-                            <h1 className='text-3xl md:text-4xl font-semibold text-gray-800 mb-2'>
+                            <h1 className='text-3xl md:text-4xl font-semibold text-gray-900 mb-2'>
                                 {selectedProduct.name}
                             </h1>
                             <p className='text-base text-gray-500 font-normal mb-2 line-through'>
                                 {selectedProduct.originalPrice && `$${selectedProduct.originalPrice}`}
                             </p>
-                            <p className='text-xl text-gray-800 font-bold mb-6'>
+                            <p className='text-xl text-gray-900 font-bold mb-6'>
                                 {selectedProduct.price && `$${selectedProduct.price}`}
                             </p>
-                            <p className="text-gray-600 mb-8 leading-relaxed">
+                            <p className="text-gray-700 mb-8 leading-relaxed">
                                 {selectedProduct.description}
                             </p>
                             <div className='mb-8'>
-                                <p className="text-gray-800 font-bold mb-3">Color:</p>
+                                <p className="text-gray-900 font-bold mb-3">Color:</p>
                                 <div className='flex gap-4'>
                                     {selectedProduct.colors.map((color) => (
                                         <button
@@ -130,7 +130,7 @@ const ProductDetails = ({ productId }) => {
                                             onClick={() => setSelectedColor(color)}
                                             className={`w-12 h-12 rounded-full border-4 transition-all
                                             ${selectedColor === color
-                                                    ? "border-teal-700 ring-4 ring-offset-2 ring-teal-300"
+                                                    ? "border-orange-500 ring-4 ring-offset-2 ring-yellow-300"
                                                     : "border-gray-300 hover:border-gray-400"
                                                 }`}
                                             style={{
@@ -145,7 +145,7 @@ const ProductDetails = ({ productId }) => {
                             </div>
 
                             <div className='mb-8'>
-                                <p className='text-gray-800 font-bold mb-3'>Size:</p>
+                                <p className='text-gray-900 font-bold mb-3'>Size:</p>
                                 <div className='flex gap-4'>
                                     {selectedProduct.sizes.map((size) => (
                                         <button
@@ -153,8 +153,8 @@ const ProductDetails = ({ productId }) => {
                                             onClick={() => setSelectedSize(size)}
                                             className={`px-6 py-3 rounded-full border-2 transition-all font-semibold
                                                 ${selectedSize === size
-                                                    ? "bg-teal-700 text-white border-teal-700 shadow-md"
-                                                    : "bg-white text-gray-800 border-gray-300 hover:bg-gray-100"
+                                                    ? "bg-yellow-500 text-black border-yellow-500 shadow-md"
+                                                    : "bg-white text-gray-900 border-gray-300 hover:bg-gray-100"
                                                 }`}
                                         >
                                             {size}
@@ -164,7 +164,7 @@ const ProductDetails = ({ productId }) => {
                             </div>
 
                             <div className='mb-10'>
-                                <p className='text-gray-800 font-bold mb-3'>Quantity:</p>
+                                <p className='text-gray-900 font-bold mb-3'>Quantity:</p>
                                 <div className='flex items-center space-x-6 mt-2'>
                                     <button
                                         onClick={() => handleQuantityChange('minus')}
@@ -183,10 +183,10 @@ const ProductDetails = ({ productId }) => {
                             <button
                                 onClick={handleAddToCart}
                                 disabled={isButtonDisabled}
-                                className={`bg-teal-700 text-white font-bold tracking-wide rounded-full w-full px-8 py-4 text-xl transition-colors mb-4
+                                className={`bg-yellow-500 text-black font-bold tracking-wide rounded-full w-full px-8 py-4 text-xl transition-colors mb-4
                                     ${isButtonDisabled
                                         ? "cursor-not-allowed opacity-50"
-                                        : "hover:bg-teal-600"
+                                        : "hover:bg-orange-500"
                                     }`}
                             >
                                 {isButtonDisabled ? "ADDING..." : "ADD TO CART"}
@@ -194,14 +194,14 @@ const ProductDetails = ({ productId }) => {
 
                             <div className='mt-12 text-gray-700'>
                                 <h3 className='text-3xl font-bold mb-4'>Characteristics</h3>
-                                <table className='w-full text-left text-base text-gray-600 border-collapse'>
+                                <table className='w-full text-left text-base text-gray-700 border-collapse'>
                                     <tbody>
                                         <tr className='border-b border-gray-300'>
-                                            <td className='py-3 pr-6 font-bold text-gray-800'>Brand</td>
+                                            <td className='py-3 pr-6 font-bold text-gray-900'>Brand</td>
                                             <td className='py-3'>{selectedProduct.brand}</td>
                                         </tr>
                                         <tr>
-                                            <td className='py-3 pr-6 font-bold text-gray-800'>Material</td>
+                                            <td className='py-3 pr-6 font-bold text-gray-900'>Material</td>
                                             <td className='py-3'>{selectedProduct.material}</td>
                                         </tr>
                                     </tbody>
@@ -211,7 +211,7 @@ const ProductDetails = ({ productId }) => {
                     </div>
 
                     <div className="mt-24">
-                        <h2 className="text-3xl text-center font-bold mb-8 text-gray-800">
+                        <h2 className="text-3xl text-center font-bold mb-8 text-gray-900">
                             You May Also Like
                         </h2>
                         <ProductGrid products={similarProducts} loading={loading} error={error} />

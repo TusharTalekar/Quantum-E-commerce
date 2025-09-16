@@ -38,16 +38,16 @@ const Register = () => {
     }
 
     return (
-        <div className="flex bg-gray-50 min-h-screen font-serif">
+        <div className="flex bg-gray-100 min-h-screen font-serif">
             <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-12">
                 <form
                     onSubmit={handleSubmit}
                     className="w-full max-w-md bg-white p-10 rounded-xl border border-gray-300 shadow-xl">
                     <div className="flex justify-center mb-6">
-                        <h2 className="text-xl font-bold text-teal-700">Quantum</h2>
+                        <h2 className="text-xl font-bold text-orange-500">Quantum</h2>
                     </div>
                     <h2 className="text-3xl font-black italic text-center mb-4 text-gray-900">Join Us &#128075;</h2>
-                    <p className="text-center mb-6 text-gray-600">
+                    <p className="text-center mb-6 text-gray-700">
                         Create an account to start shopping!
                     </p>
                     <div className="mb-4 ">
@@ -56,7 +56,7 @@ const Register = () => {
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-shadow'
+                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-shadow'
                             placeholder='Enter your name' />
                     </div>
                     <div className="mb-4 ">
@@ -65,7 +65,7 @@ const Register = () => {
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-shadow'
+                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-shadow'
                             placeholder='Enter your email address' />
                     </div>
                     <div className="mb-6 ">
@@ -74,20 +74,20 @@ const Register = () => {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 transition-shadow'
+                            className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-shadow'
                             placeholder='Enter your password' />
                     </div>
                     <button
                         type='submit'
-                        className='w-full bg-teal-700 text-white p-3 rounded-full font-bold hover:bg-teal-600 transition'
+                        className='w-full bg-yellow-500 text-black p-3 rounded-full font-bold hover:bg-orange-500 transition'
                     >
                         {loading ? "loading..." : "Sign Up"}
                     </button>
-                    <p className='mt-8 text-center text-sm text-gray-600'>
+                    <p className='mt-8 text-center text-sm text-gray-700'>
                         Already have an account?{" "}
                         <Link
                             to={`/login?redirect=${encodeURIComponent(redirect)}`}
-                            className='text-teal-700 font-bold hover:underline'>
+                            className='text-orange-500 font-bold hover:underline'>
                             Login
                         </Link>
                     </p>

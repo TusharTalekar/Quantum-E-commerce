@@ -120,7 +120,7 @@ const FilterSidebar = () => {
                             value={category}
                             onChange={handleFilterChange}
                             checked={filters.category === category}
-                            className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300" />
+                            className="mr-3 h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300" />
                         <span className="text-gray-700">{category}</span>
                     </div>
                 ))}
@@ -137,7 +137,7 @@ const FilterSidebar = () => {
                             value={gender}
                             onChange={handleFilterChange}
                             checked={filters.gender === gender}
-                            className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300" />
+                            className="mr-3 h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300" />
                         <span className="text-gray-700">{gender}</span>
                     </div>
                 ))}
@@ -154,7 +154,7 @@ const FilterSidebar = () => {
                             value={color}
                             onClick={handleFilterChange}
                             className={`w-10 h-10 rounded-full border-2 border-gray-300 cursor-pointer transform hover:scale-105 
-                                ${filters.color === color ? "ring-2 ring-teal-500 ring-offset-2" : ""}`}
+                                ${filters.color === color ? "ring-2 ring-yellow-500 ring-offset-2" : ""}`}
                             style={{ backgroundColor: color.toLowerCase() }}>
                         </button>
                     ))}
@@ -175,7 +175,7 @@ const FilterSidebar = () => {
                                 value={size}
                                 onChange={handleFilterChange}
                                 checked={filters.size.includes(size)}
-                                className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300 rounded" />
+                                className="mr-3 h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded" />
                             <span className="text-gray-700">{size}</span>
                         </div>
                     ))}
@@ -196,7 +196,7 @@ const FilterSidebar = () => {
                                 value={material}
                                 onChange={handleFilterChange}
                                 checked={filters.material.includes(material)}
-                                className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300 rounded" />
+                                className="mr-3 h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded" />
                             <span className="text-gray-700">{material}</span>
                         </div>
                     ))}
@@ -217,7 +217,7 @@ const FilterSidebar = () => {
                                 value={brand}
                                 onChange={handleFilterChange}
                                 checked={filters.brand.includes(brand)}
-                                className="mr-3 h-5 w-5 text-teal-700 focus:ring-teal-500 border-gray-300 rounded" />
+                                className="mr-3 h-5 w-5 text-yellow-500 focus:ring-yellow-500 border-gray-300 rounded" />
                             <span className="text-gray-700">{brand}</span>
                         </div>
                     ))}
@@ -236,9 +236,9 @@ const FilterSidebar = () => {
                     max={100}
                     value={priceRange[1]}
                     onChange={handlePriceChange}
-                    className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-teal-500"
+                    className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-yellow-500"
                 />
-                <div className="flex justify-between text-gray-600 mt-2">
+                <div className="flex justify-between text-gray-700 mt-2">
                     <span>$0</span>
                     <span>${priceRange[1]}</span>
                 </div>

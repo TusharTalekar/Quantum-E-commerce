@@ -80,8 +80,8 @@ const NewArrivals = () => {
     return (
         <section className='py-20 px-4'>
             <div className="max-w-6xl mx-auto text-center mb-16 relative">
-                <h2 className="text-3xl font-bold mb-4 text-teal-700">Explore New Arrivals</h2>
-                <p className="text-lg text-gray-600 mb-8">
+                <h2 className="text-3xl font-bold mb-4 text-gray-900">Explore New Arrivals</h2>
+                <p className="text-lg text-gray-700 mb-8">
                     Discover the latest styles straight off the runway, freshly added to keep your wardrobe on the cutting edge of fashion.
                 </p>
                 {/* Scroll Buttons */}
@@ -89,17 +89,17 @@ const NewArrivals = () => {
                     <button
                         onClick={() => scroll("left")}
                         disabled={!canScrollLeft}
-                        className={`p-3 rounded-full border-2 border-teal-700 transition-colors ${canScrollLeft
-                            ? "bg-teal-700 text-white hover:bg-teal-600"
-                            : "bg-transparent text-teal-700 cursor-not-allowed opacity-50"}`}>
+                        className={`p-3 rounded-full border-2 border-orange-500 transition-colors ${canScrollLeft
+                            ? "bg-orange-500 text-white hover:bg-orange-600"
+                            : "bg-transparent text-orange-500 cursor-not-allowed opacity-50"}`}>
                         <FiChevronLeft className="text-2xl" />
                     </button>
                     <button
                         onClick={() => scroll("right")}
                         disabled={!canScrollRight}
-                        className={`p-3 rounded-full border-2 border-teal-700 transition-colors ${canScrollRight
-                            ? "bg-teal-700 text-white hover:bg-teal-600"
-                            : "bg-transparent text-teal-700 cursor-not-allowed opacity-50"}`}>
+                        className={`p-3 rounded-full border-2 border-orange-500 transition-colors ${canScrollRight
+                            ? "bg-orange-500 text-white hover:bg-orange-600"
+                            : "bg-transparent text-orange-500 cursor-not-allowed opacity-50"}`}>
                         <FiChevronRight className="text-2xl" />
                     </button>
                 </div>
@@ -122,7 +122,7 @@ const NewArrivals = () => {
                                 className='w-full h-[550px] object-cover transition-transform group-hover:scale-105'
                                 draggable="false"
                             />
-                            <div className="absolute bottom-0 left-0 right-0 p-6 bg-slate-800/80 backdrop-blur-md text-white">
+                            <div className="absolute bottom-0 left-0 right-0 p-6 bg-slate-900/80 backdrop-blur-md text-white">
                                 <Link to={`/product/${product._id}`} className="block">
                                     <h4 className="font-medium text-lg text-gray-100">{product.name}</h4>
                                     <p className="mt-1 text-base font-normal text-gray-200">${product.price}</p>

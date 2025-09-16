@@ -78,22 +78,22 @@ const Checkout = () => {
     }
 
     if (loading) {
-        return <p className="text-center py-10 text-gray-600">Loading Cart ...</p>
+        return <p className="text-center py-10 text-gray-700">Loading Cart ...</p>
     }
     if (error) {
-        return <p className="text-center py-10 text-rose-500">Error: {error}</p>
+        return <p className="text-center py-10 text-red-500">Error: {error}</p>
     }
     if (!cart || !cart.products || cart.products.length === 0) {
-        return <p className="text-center py-10 text-gray-600">Your Cart is empty.</p>
+        return <p className="text-center py-10 text-gray-700">Your Cart is empty.</p>
     }
 
 
     return (
-        <div className="bg-gray-50 min-h-screen font-serif text-gray-900">
+        <div className="bg-gray-100 min-h-screen font-serif text-gray-900">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-7xl mx-auto py-12 px-6">
                 {/* Left section */}
                 <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h2 className="text-3xl font-black uppercase mb-8 text-teal-700">Checkout</h2>
+                    <h2 className="text-3xl font-black uppercase mb-8 text-orange-500">Checkout</h2>
                     <form onSubmit={handleCreateCheckout}>
                         <h3 className="text-xl font-bold mb-4">Contact Details</h3>
                         <div className="mb-4">
@@ -101,7 +101,7 @@ const Checkout = () => {
                             <input
                                 type="email"
                                 value={user ? user.email : ""}
-                                className="w-full p-3 border-2 border-gray-300 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 disabled
                             />
                         </div>
@@ -118,7 +118,7 @@ const Checkout = () => {
                                             firstName: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                     required />
                             </div>
 
@@ -133,7 +133,7 @@ const Checkout = () => {
                                             lastName: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                     required />
                             </div>
                         </div>
@@ -150,7 +150,7 @@ const Checkout = () => {
                                         address: e.target.value,
                                     })
                                 }
-                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 required />
                         </div>
 
@@ -167,7 +167,7 @@ const Checkout = () => {
                                             city: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                     required />
                             </div>
 
@@ -182,7 +182,7 @@ const Checkout = () => {
                                             postalCode: e.target.value,
                                         })
                                     }
-                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                    className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                     required />
                             </div>
                         </div>
@@ -199,7 +199,7 @@ const Checkout = () => {
                                         country: e.target.value,
                                     })
                                 }
-                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 required />
                         </div>
 
@@ -215,14 +215,14 @@ const Checkout = () => {
                                         phone: e.target.value,
                                     })
                                 }
-                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                                className="w-full p-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
                                 required />
                         </div>
 
 
                         <div>
                             {!checkoutId ? (
-                                <button type="submit" className="w-full py-4 rounded-full bg-teal-700 text-white font-bold hover:bg-teal-600 transition">
+                                <button type="submit" className="w-full py-4 rounded-full bg-yellow-500 text-black font-bold hover:bg-orange-500 transition">
                                     Continue to Payment
                                 </button>
                             ) : (
@@ -240,7 +240,7 @@ const Checkout = () => {
                 </div>
                 {/* Right section  */}
                 <div className="bg-white rounded-xl shadow-lg p-8">
-                    <h3 className="text-3xl font-bold mb-6 text-teal-700">Order Summary</h3>
+                    <h3 className="text-3xl font-bold mb-6 text-orange-500">Order Summary</h3>
                     <div className="border-t-2 border-gray-200 mb-6 pt-6" >
                         {
                             cart.products.map((product, index) => (
@@ -251,10 +251,10 @@ const Checkout = () => {
                                         <img src={product.image} alt={product.name}
                                             className="w-24 h-28 object-cover mr-6 rounded-lg" />
                                         <div>
-                                            <h3 className="text-lg font-semibold text-gray-800">{product.name}</h3>
-                                            <p className="text-sm text-gray-600">Size: {product.size}</p>
-                                            <p className="text-sm text-gray-600">Color: {product.color}</p>
-                                            <p className="text-lg font-bold text-gray-800 mt-2">${product.price?.toLocaleString()}</p>
+                                            <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
+                                            <p className="text-sm text-gray-700">Size: {product.size}</p>
+                                            <p className="text-sm text-gray-700">Color: {product.color}</p>
+                                            <p className="text-lg font-bold text-gray-900 mt-2">${product.price?.toLocaleString()}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -268,7 +268,7 @@ const Checkout = () => {
                         <p>Shipping</p>
                         <p>Free</p>
                     </div>
-                    <div className="flex justify-between items-center text-2xl font-bold mt-6 border-t-2 border-gray-200 pt-4 text-gray-800">
+                    <div className="flex justify-between items-center text-2xl font-bold mt-6 border-t-2 border-gray-200 pt-4 text-gray-900">
                         <p>Total</p>
                         <p>${cart.totalPrice?.toLocaleString()}</p>
                     </div>

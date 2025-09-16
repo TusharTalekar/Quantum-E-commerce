@@ -16,15 +16,15 @@ const MyOrdersPage = () => {
         navigate(`/order/${orderId}`);
     };
 
-    if (loading) return <p className="text-center text-gray-600">Loading ...</p>
-    if (error) return <p className="text-center text-rose-500">Error: {error}</p>
+    if (loading) return <p className="text-center text-gray-700">Loading ...</p>
+    if (error) return <p className="text-center text-red-500">Error: {error}</p>
 
     return (
         <div className="max-w-7xl mx-auto p-4 sm:p-6 bg-white rounded-xl shadow-lg font-serif">
             <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-900" >My Orders</h2>
             <div className="relative shadow-md sm:rounded-lg overflow-hidden">
-                <table className="min-w-full text-left text-gray-600">
-                    <thead className="bg-teal-100 text-xs uppercase text-teal-800 font-bold">
+                <table className="min-w-full text-left text-gray-700">
+                    <thead className="bg-gray-100 text-xs uppercase text-gray-900 font-bold">
                         <tr>
                             <th className="py-3 px-4">Image</th>
                             <th className="py-3 px-4">Order Id</th>
@@ -41,7 +41,7 @@ const MyOrdersPage = () => {
                                 <tr
                                     key={order._id}
                                     onClick={() => { handleRowClick(order._id) }}
-                                    className="border-b border-gray-200 hover:bg-teal-50 transition-colors cursor-pointer">
+                                    className="border-b border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer">
                                     <td className="p-4">
                                         <img src={order.orderItems[0].image} alt={order.orderItems[0].name}
                                             className="w-12 h-12 object-cover rounded-lg" />
@@ -59,13 +59,13 @@ const MyOrdersPage = () => {
                                     <td className="py-4 px-4">
                                         {order.orderItems.length}
                                     </td>
-                                    <td className="py-4 px-4 text-base font-normal text-gray-800">
+                                    <td className="py-4 px-4 text-base font-normal text-gray-900">
                                         ${order.totalPrice}
                                     </td>
                                     <td className="py-4 px-4">
                                         <span
                                             className={`${order.isPaid
-                                                ? "bg-teal-100 text-teal-700"
+                                                ? "bg-yellow-100 text-yellow-800"
                                                 : "bg-amber-100 text-amber-700"
                                                 } py-2 px-4 rounded-full text-sm font-semibold`}>
                                             {order.isPaid ? "Paid" : "Pending"}
@@ -77,7 +77,7 @@ const MyOrdersPage = () => {
                             <tr>
                                 <td
                                     colSpan={7}
-                                    className="py-4 px-4 text-center text-gray-600">
+                                    className="py-4 px-4 text-center text-gray-700">
                                     You have no orders
                                 </td>
                             </tr>

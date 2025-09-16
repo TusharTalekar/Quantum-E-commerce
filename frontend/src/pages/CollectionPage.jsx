@@ -41,21 +41,21 @@ const CollectionPage = () => {
 
 
     return (
-        <div className="flex flex-col lg:flex-row bg-gray-50 min-h-screen font-serif text-gray-900">
+        <div className="flex flex-col lg:flex-row bg-gray-100 min-h-screen font-serif text-gray-900">
             {/* Mobile filter button */}
-            <button onClick={toggleSidebar} className="lg:hidden border-b-2 border-teal-700 p-4 bg-teal-100 text-teal-700 font-bold flex justify-center items-center rounded-lg m-4">
+            <button onClick={toggleSidebar} className="lg:hidden border-b-2 border-yellow-500 p-4 bg-yellow-100 text-gray-900 font-bold flex justify-center items-center rounded-lg m-4">
                 <FaFilter className="mr-2" />Filters
             </button>
 
             {/* Filter Sidebar  */}
             <div
                 ref={sidebarRef}
-                className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed top-0 left-0 h-full w-72 bg-teal-100 overflow-y-auto transition-transform duration-300 lg:static lg:translate-x-0 lg:w-80 lg:shadow-lg`}>
+                className={`${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} fixed top-0 left-0 h-full w-72 bg-gray-50 overflow-y-auto transition-transform duration-300 lg:static lg:translate-x-0 lg:w-80 lg:shadow-lg`}>
                 <FilterSidebar />
             </div>
 
             <div className=" flex-grow p-4 lg:p-8">
-                <h2 className="text-3xl mb-6 uppercase font-black tracking-wide text-teal-700">All Collections</h2>
+                <h2 className="text-3xl mb-6 uppercase font-black tracking-wide text-orange-500">All Collections</h2>
 
                 {/* sort option */}
                 <SortOptions />

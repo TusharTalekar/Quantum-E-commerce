@@ -36,21 +36,21 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div className='bg-gray-50 min-h-screen font-serif text-gray-900'>
+    <div className='bg-gray-100 min-h-screen font-serif text-gray-900'>
       <Hero />
       <GenderCollectionSection />
       <NewArrivals />
 
       {/* best seller */}
-      <h2 className='text-4xl text-center font-bold tracking-wide my-16 text-teal-700'>Popular Products</h2>
+      <h2 className='text-4xl text-center font-bold tracking-wide my-16 text-orange-500'>Popular Products</h2>
       {bestSellerProduct ? (
         <ProductDetails productId={bestSellerProduct._id} />
       ) : (
-        <p className="text-center text-gray-600">Loading Best Seller product...</p>
+        <p className="text-center text-gray-700">Loading Best Seller product...</p>
       )}
 
       <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16'>
-        <h2 className='text-4xl text-center font-bold tracking-wide mb-10 text-teal-700'>
+        <h2 className='text-4xl text-center font-bold tracking-wide mb-10 text-orange-500'>
           Top Apparel for Women
         </h2>
         <ProductGrid products={products} loading={loading} error={error} />
