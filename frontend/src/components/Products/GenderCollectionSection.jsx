@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import mensCollectionImage from "../../assets/mens-collection.png";
-import womensCollectionImage from "../../assets/womens-collection.png";
 
 const GenderCollectionSection = () => {
     return (
@@ -9,7 +7,7 @@ const GenderCollectionSection = () => {
                 {/* Women's Collection */}
                 <div className="relative group overflow-hidden rounded-xl shadow-lg flex-1">
                     <img
-                        src={womensCollectionImage}
+                        src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/womens-collection.jpg`}
                         alt="Women's Collection"
                         className="w-full h-[650px] object-cover group-hover:scale-105 transition-transform duration-300"
                     />
@@ -28,7 +26,7 @@ const GenderCollectionSection = () => {
                 {/* Men's Collection */}
                 <div className="relative group overflow-hidden rounded-xl shadow-lg flex-1">
                     <img
-                        src={mensCollectionImage}
+                        src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/mens-collection.jpg`}
                         alt="Men's Collection"
                         className="w-full h-[650px] object-cover group-hover:scale-105 transition-transform duration-300"
                     />

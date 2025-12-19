@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import heroImg from "../../assets/hero.jpg";
 
 const Hero = () => {
     return (
         <section className="relative">
             <img
-                src={heroImg}
+                src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/hero.jpg`}
                 alt="Rabbit"
                 className="w-full h-[600px] md:h-[750px] lg:h-[900px] object-cover object-center" />
             <div className="absolute inset-0 bg-stone-800/60 flex items-center justify-center p-8">

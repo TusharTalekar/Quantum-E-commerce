@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import register from "../assets/register.png";
 import { registerUser } from '../redux/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { mergeCart } from '../redux/slices/cartSlice';
@@ -96,7 +95,7 @@ const Register = () => {
             <div className='hidden md:block w-1/2 bg-slate-900'>
                 <div className='h-full flex flex-col justify-center items-center'>
                     <img
-                        src={register}
+                        src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/register.jpg`}
                         alt="Login to account"
                         className='h-[750px] w-full object-cover' />
                 </div>

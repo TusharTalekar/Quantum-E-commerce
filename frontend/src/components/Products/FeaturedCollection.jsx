@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom"
-import featured from "../../assets/featured.png";
+import { Link } from "react-router-dom";
 
 const FeaturedCollection = () => {
     return (
@@ -24,7 +23,7 @@ const FeaturedCollection = () => {
                 {/* Right content  */}
                 <div className="lg:w-1/2">
                     <img
-                        src={featured}
+                        src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/featured.jpg`}
                         alt=""
                         className="h-full w-full object-cover" />
                 </div>
