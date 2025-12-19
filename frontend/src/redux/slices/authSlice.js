@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { VITE_BACKEND_URL } from "../../api/api";
 
 // retrieve user info and token from local Storage if there
 const userFromStorage = localStorage.getItem("userInfo")
@@ -22,7 +23,7 @@ const initialState = {
 export const loginUser = createAsyncThunk("auth/loginUser", async (userData, { rejectWithValue }) => {
     try {
         const response = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}/api/users/login`,
+            `${VITE_BACKEND_URL}/api/users/login`,
             userData
         );
         localStorage.setItem("userInfo", JSON.stringify(response.data.user));
@@ -39,7 +40,7 @@ export const loginUser = createAsyncThunk("auth/loginUser", async (userData, { r
 export const registerUser = createAsyncThunk("auth/registerUser", async (userData, { rejectWithValue }) => {
     try {
         const response = await axios.post(
-            `${import.meta.env.VITE_BACKEND_URL}/api/users/register`,
+            `${VITE_BACKEND_URL}/api/users/register`,
             userData
         );
         localStorage.setItem("userInfo", JSON.stringify(response.data.user));

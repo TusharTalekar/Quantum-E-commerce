@@ -4,6 +4,7 @@ import PayButton from "./PayButton";
 import { useDispatch, useSelector } from "react-redux";
 import { createCheckout } from "../../redux/slices/checkoutSlice";
 import axios from "axios";
+import { VITE_BACKEND_URL } from "../../api/api";
 
 const Checkout = () => {
     const navigate = useNavigate();
@@ -47,7 +48,7 @@ const Checkout = () => {
     const handlePaymentSuccess = async (details) => {
         try {
             const response = await axios.put(
-                `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
+                `${VITE_BACKEND_URL}/api/checkout/${checkoutId}/pay`,
                 { paymentStatus: "paid", paymentDetails: details },
                 {
                     headers: {
@@ -64,7 +65,7 @@ const Checkout = () => {
     const handleFinalizeCheckout = async (checkoutId) => {
         try {
             const response = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/api/checkout/${checkoutId}/finalize`,
+                `${VITE_BACKEND_URL}/api/checkout/${checkoutId}/finalize`,
                 {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("userToken")}`

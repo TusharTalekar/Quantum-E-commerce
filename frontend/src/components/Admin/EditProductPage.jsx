@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { fetchProductDetails, updateProduct } from "../../redux/slices/productsSlice";
 import axios from "axios";
-
+import { VITE_BACKEND_URL } from "../../api/api.js";
 
 const EditProductPage = () => {
     const dispatch = useDispatch();
@@ -52,7 +52,7 @@ const EditProductPage = () => {
         try {
             setUploading(true);
             const { data } = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/api/upload`,
+                `${VITE_BACKEND_URL}/api/upload`,
                 formData,
                 {
                     headers: { "Content-Type": "multipart/form-data" },

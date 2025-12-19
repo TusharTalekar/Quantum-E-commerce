@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useRef } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-
+import { VITE_BACKEND_URL } from "../../api/api";
 
 const NewArrivals = () => {
     const scrollRef = useRef(null);
@@ -18,7 +18,7 @@ const NewArrivals = () => {
     useEffect(() => {
         const fetchNewArrivals = async () => {
             try {
-                const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/products/new-arrivals`);
+                const response = await axios.get(`${VITE_BACKEND_URL}/api/products/new-arrivals`);
                 setNewArrivals(response.data);
             } catch (err) {
                 console.error(err);
