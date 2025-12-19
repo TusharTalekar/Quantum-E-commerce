@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require("dotenv");
+const path = require('path');
 const userRoutes = require("./routes/userRoutes");
 const productRoutes = require("./routes/productRoutes");
 const cartRoutes = require("./routes/cartRoutes");
@@ -13,21 +14,14 @@ const productAdminRoutes = require("./routes/productAdminRoutes");
 const adminOrderRoutes = require("./routes/adminOrderRoutes");
 const connectDB = require("./config/db");
 
-const app = express();
-app.use(express.json());
-app.use(cors());
-
 dotenv.config();
-
-// const PORT = process.env.PORT || 3000;
-
-// Connect ot mongodb
 connectDB();
 
-app.get("/", (req, res) => {
-    res.send("Welcome to api");
-});
-
+const app = express();
+const PORT = process.env.PORT || 5000;
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 // API routes
 app.use("/api/users", userRoutes);
@@ -43,8 +37,16 @@ app.use("/api/admin/users", adminRoutes);
 app.use("/api/admin/products", productAdminRoutes);
 app.use("/api/admin/orders", adminOrderRoutes);
 
-// app.listen(PORT, () => {
-//     console.log(`Server is running on http://localhost:${PORT}`);
-// });
+// Serve frontend
+const frontendPath = path.join(__dirname, "../frontend/dist");
+app.use(express.static(frontendPath));
 
-module.exports=app;
+app.use((req, res) => {
+    if (!req.path.startsWith("/api")) {
+        res.sendFile(path.join(frontendPath, "index.html"));
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
