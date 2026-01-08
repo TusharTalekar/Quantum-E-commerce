@@ -78,7 +78,7 @@ const NewArrivals = () => {
 
 
     return (
-        <section className='py-20 px-4'>
+        <section className='py-20 px-4' id='newarrivals'>
             <div className="max-w-6xl mx-auto text-center mb-16 relative">
                 <h2 className="text-3xl font-bold mb-4 text-gray-900">Explore New Arrivals</h2>
                 <p className="text-lg text-gray-700 mb-8">

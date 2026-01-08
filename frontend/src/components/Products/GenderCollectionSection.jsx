@@ -5,7 +5,10 @@ const GenderCollectionSection = () => {
         <section className="py-24 px-4 bg-gray-100">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8">
                 {/* Women's Collection */}
-                <div className="relative group overflow-hidden rounded-xl shadow-lg flex-1">
+                <Link
+                    to="/collections/all?gender=Women"
+                    className="relative group overflow-hidden rounded-xl shadow-lg flex-1"
+                >
                     <img
                         src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/womens-collection.jpg`}
                         alt="Women's Collection"
@@ -16,15 +19,19 @@ const GenderCollectionSection = () => {
                             <h2 className="text-3xl font-black tracking-wide mb-2">
                                 Women's Collection
                             </h2>
-                            <Link to="/collections/all?gender=Women"
+                            <Link
+                                to="/collections/all?gender=Women"
                                 className="text-yellow-200 underline text-lg font-bold hover:text-yellow-100 transition-colors">
                                 Shop Now
                             </Link>
                         </div>
                     </div>
-                </div>
+                </Link>
                 {/* Men's Collection */}
-                <div className="relative group overflow-hidden rounded-xl shadow-lg flex-1">
+                <Link
+                    to="/collections/all?gender=Men"
+                    className="relative group overflow-hidden rounded-xl shadow-lg flex-1"
+                >
                     <img
                         src={`https://res.cloudinary.com/dyvnhonl6/image/upload/E%20commerce/mens-collection.jpg`}
                         alt="Men's Collection"
@@ -35,15 +42,16 @@ const GenderCollectionSection = () => {
                             <h2 className="text-3xl font-black tracking-wide mb-2">
                                 Men's Collection
                             </h2>
-                            <Link to="/collections/all?gender=Men"
+                            <Link
+                                to="/collections/all?gender=Men"
                                 className="text-yellow-200 underline text-lg font-bold hover:text-yellow-100 transition-colors">
                                 Shop Now
                             </Link>
                         </div>
                     </div>
-                </div>
+                </Link>
             </div>
-        </section>
+        </section >
     )
 }
 

@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <div className="border-b-2 border-gray-300">
       {/* Topbar  */}
-      <Topbar/>
+      {/* <Topbar /> */}
+
       {/* Navbar  */}
-      <Navbar/>
-      {/* Cart drawer */}
+      <Navbar />
     </div>
   )
 }

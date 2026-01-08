@@ -34,22 +34,22 @@ const Footer = () => {
                     <h3 className='text-2xl font-bold text-gray-900 mb-4'>Shop</h3>
                     <ul className='space-y-3 text-gray-700'>
                         <li>
-                            <Link to="#" className="hover:text-orange-500 transition-colors">
+                            <Link to="/collections/all?category=Top+Wear&gender=Men" className="hover:text-orange-500 transition-colors">
                                 Men's top Wear
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="hover:text-orange-500 transition-colors">
+                            <Link to="/collections/all?category=Top+Wear&gender=Women" className="hover:text-orange-500 transition-colors">
                                 Women's top Wear
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="hover:text-orange-500 transition-colors">
+                            <Link to="/collections/all?category=Bottom+Wear&gender=Men" className="hover:text-orange-500 transition-colors">
                                 Men's bottm Wear
                             </Link>
                         </li>
                         <li>
-                            <Link to="#" className="hover:text-orange-500 transition-colors">
+                            <Link to="/collections/all?category=Bottom+Wear&gender=Women" className="hover:text-orange-500 transition-colors">
                                 Women's bottm Wear
                             </Link>
                         </li>
@@ -119,7 +119,7 @@ const Footer = () => {
             {/* Footer Bottom */}
             <div className="container mx-auto mt-16 px-4 lg:px-0 border-t-2 border-gray-300 pt-8">
                 <p className="text-gray-700 text-sm tracking-tighter text-center">
-                   © 2025, CompileTab. All Rights Reserved.
+                    © 2025, CompileTab. All Rights Reserved.
                 </p>
             </div>
         </footer>
