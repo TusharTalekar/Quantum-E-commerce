@@ -48,6 +48,10 @@ app.use("/api/admin/users", adminRoutes);
 app.use("/api/admin/products", productAdminRoutes);
 app.use("/api/admin/orders", adminOrderRoutes);
 
+app.get('/', (req, res) => {
+    res.send('This is Quantum-E-commerce API');
+})
+
 // // Serve frontend
 // const frontendPath = path.join(__dirname, "../frontend/dist");
 // app.use(express.static(frontendPath));
