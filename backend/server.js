@@ -46,16 +46,16 @@ app.use("/api/admin/users", adminRoutes);
 app.use("/api/admin/products", productAdminRoutes);
 app.use("/api/admin/orders", adminOrderRoutes);
 
-// Serve frontend
-const frontendPath = path.join(__dirname, "../frontend/dist");
-app.use(express.static(frontendPath));
+// // Serve frontend
+// const frontendPath = path.join(__dirname, "../frontend/dist");
+// app.use(express.static(frontendPath));
 
-app.use((req, res) => {
-    if (!req.path.startsWith("/api")) {
-        res.sendFile(path.join(frontendPath, "index.html"));
-    }
-});
+// app.use((req, res) => {
+//     if (!req.path.startsWith("/api")) {
+//         res.sendFile(path.join(frontendPath, "index.html"));
+//     }
+// });
 
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-});
+// app.listen(PORT, () => {
+//     console.log(`Server running at http://localhost:${PORT}`);
+// });
