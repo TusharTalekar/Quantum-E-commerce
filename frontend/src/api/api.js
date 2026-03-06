@@ -1,1 +1,1 @@
-export const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://quantum-blush.vercel.app";
+export const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://quantum-e-commerce.vercel.app";

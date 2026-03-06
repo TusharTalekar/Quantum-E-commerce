@@ -16,23 +16,22 @@ const productAdminRoutes = require("./routes/productAdminRoutes");
 const adminOrderRoutes = require("./routes/adminOrderRoutes");
 const connectDB = require("./config/db");
 
+const app = express();
+app.use(express.json());
+app.use(cors());
+
 dotenv.config();
+
+const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
+
+// Connect ot mongodb
 connectDB();
 
-const app = express();
-const PORT = process.env.PORT || 5000;
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    origin: [
-        "http://localhost:5000",
-        "http://localhost:5173",
-        "https://quantum-blush.vercel.app",
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.get("/", (req, res) => {
+    res.send("Welcome to Quantum-E-commerce API");
+});
+
 
 // API routes
 app.use("/api/users", userRoutes);
@@ -48,24 +47,11 @@ app.use("/api/admin/users", adminRoutes);
 app.use("/api/admin/products", productAdminRoutes);
 app.use("/api/admin/orders", adminOrderRoutes);
 
-app.get('/', (req, res) => {
-    res.send('This is Quantum-E-commerce API');
-})
-
-// // Serve frontend
-// const frontendPath = path.join(__dirname, "../frontend/dist");
-// app.use(express.static(frontendPath));
-
-// app.use((req, res) => {
-//     if (!req.path.startsWith("/api")) {
-//         res.sendFile(path.join(frontendPath, "index.html"));
-//     }
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+// app.listen(PORT, () => {
+//     console.log(`Server is running on http://localhost:${PORT}`);
 // });
 
-module.exports = app;
-
-if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`Server running at http://localhost:${PORT}`);
-    });
-}
+module.exports=app;
