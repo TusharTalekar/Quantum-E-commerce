@@ -15,7 +15,7 @@ export const fetchUserOrders = createAsyncThunk("orders/fetchUserOrders", async 
         );
         return response.data;
     } catch (err) {
-        rejectWithValue(err.response.data);
+        return rejectWithValue(err.response?.data || { message: "Unable to fetch orders." });
     }
 });
 
@@ -33,7 +33,7 @@ export const fetchOrderDetails = createAsyncThunk("orders/fetchOrderDetails", as
         );
         return response.data;
     } catch (err) {
-        rejectWithValue(err.response.data);
+        return rejectWithValue(err.response?.data || { message: "Unable to fetch order details." });
     }
 });
 
@@ -61,7 +61,7 @@ const orderSlice = createSlice({
             })
             .addCase(fetchUserOrders.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload.message;
+                state.error = action.payload?.message || "Unable to fetch orders.";
             })
             // fetch order details 
             .addCase(fetchOrderDetails.pending, (state) => {
@@ -74,7 +74,7 @@ const orderSlice = createSlice({
             })
             .addCase(fetchOrderDetails.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload.message;
+                state.error = action.payload?.message || "Unable to fetch order details.";
             });
     }
 });

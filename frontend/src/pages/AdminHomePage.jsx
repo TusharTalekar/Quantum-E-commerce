@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllOrders } from "../redux/slices/adminOrderSlice";
 import { fetchAdminProducts } from "../redux/slices/adminProductSlice";
 import { useEffect } from "react";
+import { formatINR } from "../utils/currency";
 
 const AdminHomePage = () => {
     const dispatch = useDispatch();
@@ -27,7 +28,7 @@ const AdminHomePage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="p-6 bg-white shadow-xl rounded-xl">
                         <h2 className="text-xl font-semibold mb-2 text-gray-900">Revenue</h2>
-                        <p className="text-3xl font-bold text-orange-500">${totalSales.toFixed(2)}</p>
+                        <p className="text-3xl font-bold text-orange-500">{formatINR(totalSales)}</p>
                     </div>
                     <div className="p-6 bg-white shadow-xl rounded-xl">
                         <h2 className="text-xl font-semibold mb-2 text-gray-900">Total orders</h2>
@@ -69,8 +70,8 @@ const AdminHomePage = () => {
                                         key={order._id}
                                         className="border-b border-gray-200 hover:bg-gray-50 transition-colors">
                                         <td className="p-4 font-medium text-gray-900">{order._id}</td>
-                                        <td className="p-4 font-medium text-gray-900">{order.user.name}</td>
-                                        <td className="p-4 font-bold text-gray-900">${order.totalPrice.toFixed(2)}</td>
+                                        <td className="p-4 font-medium text-gray-900">{order.user?.name || "Deleted user"}</td>
+                                        <td className="p-4 font-bold text-gray-900">{formatINR(order.totalPrice)}</td>
                                         <td className="p-4">
                                             <span className='bg-yellow-100 text-yellow-800 text-sm font-semibold px-2 py-1 rounded-full'>
                                                 {order.status}

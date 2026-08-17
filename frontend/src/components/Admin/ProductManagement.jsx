@@ -2,6 +2,7 @@ import { deleteProduct, fetchAdminProducts } from '../../redux/slices/adminProdu
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from 'react';
+import { formatINR } from "../../utils/currency";
 
 const ProductManagement = () => {
     const dispatch = useDispatch();
@@ -44,7 +45,7 @@ const ProductManagement = () => {
                                     <td className='p-4 font-bold text-gray-900 whitespace-nowrap'>
                                         {product.name}
                                     </td>
-                                    <td className="p-4 font-medium text-gray-900">${product.price.toFixed(2)}</td>
+                                    <td className="p-4 font-medium text-gray-900">{formatINR(product.price)}</td>
                                     <td className="p-4 font-medium text-gray-900">{product.sku}</td>
                                     <td className="p-4">
                                         <Link

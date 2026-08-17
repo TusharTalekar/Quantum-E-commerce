@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { VITE_BACKEND_URL } from "../../api/api";
+import { formatINR } from "../../utils/currency";
 
 const NewArrivals = () => {
     const scrollRef = useRef(null);
@@ -72,7 +73,7 @@ const NewArrivals = () => {
         if (container) {
             container.addEventListener("scroll", updateScrollButtons);
             updateScrollButtons();
-            return () => container.removeEventListener("sroll", updateScrollButtons);
+            return () => container.removeEventListener("scroll", updateScrollButtons);
         }
     }, [newArrivals]);
 
@@ -125,7 +126,7 @@ const NewArrivals = () => {
                             <div className="absolute bottom-0 left-0 right-0 p-6 bg-slate-900/80 backdrop-blur-md text-white">
                                 <Link to={`/product/${product._id}`} className="block">
                                     <h4 className="font-medium text-lg text-gray-100">{product.name}</h4>
-                                    <p className="mt-1 text-base font-normal text-gray-200">${product.price}</p>
+                                    <p className="mt-1 text-base font-normal text-gray-200">{formatINR(product.price)}</p>
                                 </Link>
                             </div>
                         </div>

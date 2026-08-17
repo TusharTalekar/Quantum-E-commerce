@@ -14,7 +14,7 @@ const protect = async (req, res, next) => {
             req.user = await User.findById(decoded.user.id).select("-password"); //exclude password
             next();
         } catch (err) {
-            console.log("Tolen verification failed : ", err);
+            console.log("Token verification failed : ", err);
             res.status(401).json({ message: "Not authorized, token failed!" });
         }
     } else {

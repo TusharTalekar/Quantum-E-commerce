@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom"
+import { formatINR } from "../../utils/currency";
 
 const FilterSidebar = () => {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -239,8 +240,8 @@ const FilterSidebar = () => {
                     className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-yellow-500"
                 />
                 <div className="flex justify-between text-gray-700 mt-2">
-                    <span>$0</span>
-                    <span>${priceRange[1]}</span>
+                    <span>{formatINR(0)}</span>
+                    <span>{formatINR(priceRange[1])}</span>
                 </div>
             </div>
         </div>

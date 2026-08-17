@@ -44,10 +44,13 @@ const checkoutSchema = new mongoose.Schema(
             required: true,
         },
         shippingAddress: {
+            firstName: { type: String, required: true },
+            lastName: { type: String, required: true },
             address: { type: String, required: true, },
             city: { type: String, required: true },
             postalCode: { type: String, required: true, },
             country: { type: String, required: true },
+            phone: { type: String, required: true },
         },
         paymentMethod: {
             type: String,
@@ -66,6 +69,7 @@ const checkoutSchema = new mongoose.Schema(
         },
         paymentStatus: { type: String, default: "Pending" },
         paymentDetails: { type: mongoose.Schema.Types.Mixed, },
+        razorpayOrderId: { type: String, index: true },
         isFinalized: { type: Boolean, default: false, },
         finalizedAt: { type: Date, },
     },

@@ -3,6 +3,7 @@ import { IoMdClose } from 'react-icons/io';
 import CartContents from '../Cart/CartContents';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import { formatINR } from "../../utils/currency";
 
 const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ const CartDrawer = ({ drawerOpen, toggleCartDrawer }) => {
                     <>
                         <div className="flex justify-between items-center text-xl font-bold mb-4 text-gray-900">
                             <p>Subtotal</p>
-                            <p>${cart.totalPrice?.toLocaleString()}</p>
+                            <p>{formatINR(cart.totalPrice)}</p>
                         </div>
                         <button
                             onClick={handleCheckout}

@@ -38,10 +38,13 @@ const orderSchema = new mongoose.Schema(
         },
         orderItems: [orderItemSchema],
         shippingAddress: {
+            firstName: { type: String, required: true },
+            lastName: { type: String, required: true },
             address: { type: String, required: true, },
             city: { type: String, required: true, },
             postalCode: { type: String, required: true, },
             country: { type: String, required: true, },
+            phone: { type: String, required: true },
         },
         paymentMethod: { type: String, required: true, },
         totalPrice: { type: Number, required: true, },
@@ -50,6 +53,7 @@ const orderSchema = new mongoose.Schema(
         isDelivered: { type: Boolean, default: false, },
         deliveredAt: { type: Date },
         paymentStatus: { type: String, default: "Pending", },
+        paymentDetails: { type: mongoose.Schema.Types.Mixed },
         status: {
             type: String,
             enum: ["Processing", "Shipped", "Delivered", "Cancelled"],

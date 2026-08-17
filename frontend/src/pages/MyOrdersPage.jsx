@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchOrderDetails, fetchUserOrders } from "../redux/slices/orderSlice";
+import { fetchUserOrders } from "../redux/slices/orderSlice";
+import { formatINR } from "../utils/currency";
 
 const MyOrdersPage = () => {
     const navigate = useNavigate();
@@ -43,8 +44,9 @@ const MyOrdersPage = () => {
                                     onClick={() => { handleRowClick(order._id) }}
                                     className="border-b border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer">
                                     <td className="p-4">
-                                        <img src={order.orderItems[0].image} alt={order.orderItems[0].name}
+                                        {order.orderItems[0] && <img src={order.orderItems[0].image} alt={order.orderItems[0].name}
                                             className="w-12 h-12 object-cover rounded-lg" />
+                                        }
                                     </td>
                                     <td className="py-4 px-4 font-bold text-gray-900 whitespace-nowrap">
                                         #{order._id}
@@ -60,7 +62,7 @@ const MyOrdersPage = () => {
                                         {order.orderItems.length}
                                     </td>
                                     <td className="py-4 px-4 text-base font-normal text-gray-900">
-                                        ${order.totalPrice}
+                                        {formatINR(order.totalPrice)}
                                     </td>
                                     <td className="py-4 px-4">
                                         <span

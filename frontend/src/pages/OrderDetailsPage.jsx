@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchOrderDetails } from "../redux/slices/orderSlice";
+import { formatINR } from "../utils/currency";
 
 const OrderDetailsPage = () => {
     const { id } = useParams();
@@ -88,9 +89,9 @@ const OrderDetailsPage = () => {
                                                 {item.name}
                                             </Link>
                                         </td>
-                                        <td className="py-4 px-4 font-medium text-gray-900">${item.price}</td>
+                                        <td className="py-4 px-4 font-medium text-gray-900">{formatINR(item.price)}</td>
                                         <td className="py-4 px-4 text-gray-800 font-medium">{item.quantity}</td>
-                                        <td className="py-4 px-4 font-bold text-gray-900">${item.price * item.quantity}</td>
+                                        <td className="py-4 px-4 font-bold text-gray-900">{formatINR(item.price * item.quantity)}</td>
                                     </tr>
                                 ))}
                             </tbody>

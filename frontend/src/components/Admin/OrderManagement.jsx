@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchAllOrders, updateOrderStatus } from "../../redux/slices/adminOrderSlice";
+import { formatINR } from "../../utils/currency";
 
 const OrderManagement = () => {
     const dispatch = useDispatch();
@@ -48,8 +49,8 @@ const OrderManagement = () => {
                                     <td className="py-4 px-4 font-bold text-gray-900 whitespace-nowrap">
                                         #{order._id}
                                     </td>
-                                    <td className="p-4 font-medium text-gray-900">{order.user.name}</td>
-                                    <td className="p-4 font-bold text-gray-900">${order.totalPrice.toFixed(2)}</td>
+                                    <td className="p-4 font-medium text-gray-900">{order.user?.name || "Deleted user"}</td>
+                                    <td className="p-4 font-bold text-gray-900">{formatINR(order.totalPrice)}</td>
                                     <td className="p-4">
                                         <select
                                             value={order.status}

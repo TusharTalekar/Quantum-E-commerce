@@ -27,7 +27,7 @@ export const fetchCart = createAsyncThunk("cart/fetchCart", async ({ userId, gue
     } catch (err) {
         console.error(err);
         return rejectWithValue(err.response.data);
-
+        
     }
 });
 

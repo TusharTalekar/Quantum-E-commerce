@@ -1,6 +1,7 @@
 import { RiDeleteBin3Line } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { updateCartItemQuantity, removeFromCart } from "../../redux/slices/cartSlice";
+import { formatINR } from "../../utils/currency";
 
 const CartContents = ({ cart, userId, guestId }) => {
     const dispatch = useDispatch();
@@ -57,7 +58,7 @@ const CartContents = ({ cart, userId, guestId }) => {
                             </div>
                         </div>
                         <div className="text-right">
-                            <p className="text-lg font-bold text-gray-900">${product.price.toLocaleString()}</p>
+                            <p className="text-lg font-bold text-gray-900">{formatINR(product.price)}</p>
                             <button onClick={() => handleRemoveFromCart(product.productId, product.size, product.color)}>
                                 <RiDeleteBin3Line className="h-6 w-6 mt-4 text-red-500 hover:text-red-700 transition-colors" />
                             </button>

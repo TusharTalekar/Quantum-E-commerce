@@ -18,7 +18,7 @@ export const createCheckout = createAsyncThunk(
             );
             return response.data;
         } catch (err) {
-            return rejectWithValue(err.response.data);
+            return rejectWithValue(err.response?.data || { message: "Unable to create checkout." });
         }
     });
 
@@ -39,11 +39,11 @@ const checkoutSlice = createSlice({
             })
             .addCase(createCheckout.fulfilled, (state, action) => {
                 state.loading = false;
-                state.checkout = action.payload;
+                state.checkout = action.payload.checkout;
             })
             .addCase(createCheckout.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload.message;
+                state.error = action.payload?.message || "Unable to create checkout.";
             });
     },
 });

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductDetails, fetchSimilarProducts } from "../../redux/slices/productsSlice";
 import { addToCart } from "../../redux/slices/cartSlice";
+import { formatINR } from "../../utils/currency";
 
 
 const ProductDetails = ({ productId }) => {
@@ -113,10 +114,10 @@ const ProductDetails = ({ productId }) => {
                                 {selectedProduct.name}
                             </h1>
                             <p className='text-base text-gray-500 font-normal mb-2 line-through'>
-                                {selectedProduct.originalPrice && `$${selectedProduct.originalPrice}`}
+                                {selectedProduct.originalPrice && formatINR(selectedProduct.originalPrice)}
                             </p>
                             <p className='text-xl text-gray-900 font-bold mb-6'>
-                                {selectedProduct.price && `$${selectedProduct.price}`}
+                                {selectedProduct.price && formatINR(selectedProduct.price)}
                             </p>
                             <p className="text-gray-700 mb-8 leading-relaxed">
                                 {selectedProduct.description}
